@@ -1,4 +1,22 @@
 ---
-title: "Untitled"
+title: "A Beautiful Graphic"
+author: "Mohsin Raza"
 format: html
+execute:
+ echo: false
 ---
+
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+ggplot(diamonds, aes(x = cut, y = price, fill = cut)) +
+  geom_boxplot(show.legend = FALSE) +
+  labs(
+    title = "Distribution of Diamond Prices by Cut",
+    x = "Cut",
+    y = "Price (USD)"
+  ) +
+  scale_fill_brewer(palette = "Pastel1") +
+  theme_minimal(base_size = 14)
+
+```
